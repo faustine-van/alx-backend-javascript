@@ -1,6 +1,6 @@
 import { uploadPhoto, createUser } from './utils';
 
-export default function asyncUploadUser() {
+export default async function asyncUploadUser() {
   const uploaded = uploadPhoto();
   const created = createUser();
   return Promise.all([uploaded, created])
