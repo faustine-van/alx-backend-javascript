@@ -34,7 +34,7 @@ export default class Airport {
     }
   }
 
-  displayFullCurrency() {
-    return `${this._name} (${this._code})`;
+  toString() {
+    return this._code;
   }
 }
