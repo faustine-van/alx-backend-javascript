@@ -75,6 +75,8 @@ npm run dev testfilename.js
 ### REFERENCE
 - [Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)
 - [typed arrays](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Typed_arrays)
+- [Typed arrays deep dive](https://www.codeguage.com/courses/advanced-js/buffers-typed-arrays)
 - [Set Data Structure](https://www.google.com/search?q=set+in+javascript&oq=set+in+ja&gs_lcrp=EgZjaHJvbWUqDAgAEAAYQxiABBiKBTIMCAAQABhDGIAEGIoFMgYIARBFGDkyBwgCEAAYgAQyDAgDEAAYFBiHAhiABDIHCAQQABiABDIGCAUQRRg8MgYIBhBFGDwyBggHEEUYPKgCALACAA&sourceid=chrome&ie=UTF-8)
 - [Map Data Structure](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map)
 - [WeakMap](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakMap)
+- [Advanced Data Manipulation in Javascript](https://medium.com/@sub.metu/advanced-data-manipulation-javascript-b309fd008c6d)
