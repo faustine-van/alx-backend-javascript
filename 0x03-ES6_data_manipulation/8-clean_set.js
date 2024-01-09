@@ -3,15 +3,15 @@ export default function cleanSet(set, startString) {
     return '';
   }
   const newArray = [];
-  //let text = '';
+  // let text = '';
   set.forEach((value) => {
     const len = startString.length;
     if (value.startsWith(startString)) {
       const val = `${value.slice(len)}`;
       newArray.push(val);
-      //text += val;
+      // text += val;
     }
   });
-  //return text.slice(0, -1);
+  // return text.slice(0, -1);
   return newArray.join('-');
 }
