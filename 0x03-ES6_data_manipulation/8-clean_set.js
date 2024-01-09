@@ -1,7 +1,4 @@
 export default function cleanSet(set, startString) {
-  if (startString === '') {
-    return '';
-  }
   let text = '';
   set.forEach((value) => {
     const len = startString.length;
