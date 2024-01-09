@@ -1,5 +1,5 @@
 export default function cleanSet(set, startString) {
-  if (!startString || startString.length === 0) {
+  if (!startString || startString.length === 0 || !Object.prototype.toString.call(set) === '[object Set]') {
     return '';
   }
   const newArray = [];
