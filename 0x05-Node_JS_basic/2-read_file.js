@@ -17,8 +17,7 @@ function countStudents(file) {
     }
     const csList = [];
     const sweList = [];
-    for (const student of students) {
-      // console.log(student)
+    for (const student of students){
       for (const s of student) {
         if (s === 'CS') {
           u += 1;
