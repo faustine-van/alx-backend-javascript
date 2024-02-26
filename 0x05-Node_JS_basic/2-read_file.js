@@ -2,10 +2,8 @@
 const fs = require('fs');
 
 function countStudents(file) {
-  fs.readFile(file, 'utf-8', (err, data) => {
-    if (err) {
-      throw new Error('Cannot load the database');
-    }
+  try {
+    const data = fs.readFileSync(file, 'utf-8');
     let j = 0;
     let u = 0;
     const students = [];
@@ -17,7 +15,7 @@ function countStudents(file) {
     }
     const csList = [];
     const sweList = [];
-    for (const student of students){
+    for (const student of students) {
       for (const s of student) {
         if (s === 'CS') {
           u += 1;
@@ -30,6 +28,9 @@ function countStudents(file) {
     }
     console.log(`Number of students in CS: ${u}. List: ${csList.join(', ')}`);
     console.log(`Number of students in SWE: ${j}. List: ${sweList.join(', ')}`);
-  });
+  } catch(err) {
+    // Throw an error if the database is not available
+    throw new Error('Cannot load the database');
+  }
 }
 module.exports = countStudents;
