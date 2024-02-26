@@ -4,7 +4,7 @@ const http = require('http');
 const app = http.createServer((req, res) => {
   // set header
   res.writeHead(200, { 'Content-Type': 'text/plain' });
-  res.end('Hello Holberton School!\n');
+  res.end('Hello Holberton School!');
 }).listen(1245);
 
 // Export the app for external use
