@@ -45,16 +45,12 @@ async function countStudents(file) {
   }
 }
 // Route for the /students path
-app.get('/students', async (req, res) => {
+app.get('/students', async (_, res) => {
   try {
     const report = await countStudents(file);
-    res.statusCode = 200;
-    res.setHeader('Content-Type', 'text/plain');
     res.send(report);
-  } catch (err) {
-    // throw new Error('Cannot load the database');
-    res.statusCode = 500;
-    res.send('Cannot load the database');
+  } catch (error) {
+    res.status(500).send('Internal server Error');
   }
 });
 
