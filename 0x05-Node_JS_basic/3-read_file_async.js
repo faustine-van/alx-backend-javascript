@@ -3,34 +3,31 @@ const fs = require('fs').promises;
 
 async function countStudents(file) {
   try {
-    const response = await fs.readFile(file, 'utf-8');
-    const lines = response.split('\n').filter((line) => line.trim() !== '');
-    const students = lines.slice(1).map((line) => line.split(','));
-
-    let sweCount = 0;
-    let csCount = 0;
+    const res = await fs.readFile(file, 'utf-8');
+    let j = 0;
+    let u = 0;
+    const students = [];
+    const args = res.split('\n');
+    const items = args.slice(1, -1);
+    console.log(`Number of students: ${items.length}`);
+    for (const item of items) {
+      students.push(item.split(','));
+    }
     const csList = [];
     const sweList = [];
-
     for (const student of students) {
-      for (const field of student) {
-        // if (fields.includes('CS')) {
-        if (field === 'CS') {
-          csCount += 1;
+      for (const s of student) {
+        if (s === 'CS') {
+          u += 1;
           csList.push(student[0]);
-        } else if (field === 'SWE') {
-          sweCount += 1;
+        } else if (s === 'SWE') {
+          j += 1;
           sweList.push(student[0]);
         }
       }
     }
-    const reportParts = [
-      'This is the list of our students',
-      `Number of students: ${students.length}`,
-      `Number of students in CS: ${csCount}. List: ${csList.join(', ')}`,
-      `Number of students in SWE: ${sweCount}. List: ${sweList.join(', ')}`,
-    ];
-    console.log(reportParts.join('\n'));
+    console.log(`Number of students in CS: ${u}. List: ${csList.join(', ')}`);
+    console.log(`Number of students in SWE: ${j}. List: ${sweList.join(', ')}`);
   } catch (err) {
     throw new Error('Cannot load the database');
   }
