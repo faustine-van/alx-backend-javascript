@@ -22,7 +22,6 @@ function countStudents(file) {
         const sweList = sweStudents.map((student) => student[0]);
 
         const reportParts = [
-          'This is the list of our students',
           `Number of students: ${students.length}`,
           `Number of students in CS: ${csCount}. List: ${csList.join(', ')}`,
           `Number of students in SWE: ${sweCount}. List: ${sweList.join(', ')}`,
