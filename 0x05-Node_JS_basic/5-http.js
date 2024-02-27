@@ -44,10 +44,12 @@ const app = http.createServer(async (req, res) => {
   // set header
   const repUrl = url.parse(req.url).pathname;
   if (repUrl === '/') {
+    res.setHeader('Content-Type', 'text/plain');
     res.end('Hello Holberton School!');
   } else if (repUrl === '/students') {
     try {
       const report = await countStudents(file);
+      res.setHeader('Content-Type', 'text/plain');
       res.end(report);
     } catch (error) {
       res.end('Internal server Error');
