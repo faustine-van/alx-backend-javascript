@@ -12,39 +12,43 @@ app.get('/', (req, res) => {
   res.send('Hello Holberton School!');
 });
 
+async function countStudents(file) {
+  const response = await fs.readFile(file, 'utf-8');
+  const lines = response.split('\n').filter((line) => line.trim() !== '');
+  const students = lines.slice(1).map((line) => line.split(','));
+
+  let sweCount = 0;
+  let csCount = 0;
+  const csList = [];
+  const sweList = [];
+
+  for (const student of students) {
+    for (const field of student) {
+      // if (fields.includes('CS')) {
+      if (field === 'CS') {
+        csCount += 1;
+        csList.push(student[0]);
+      } else if (field === 'SWE') {
+        sweCount += 1;
+        sweList.push(student[0]);
+      }
+    }
+  }
+  const reportParts = [
+    'This is the list of our students',
+    `Number of students: ${students.length}`,
+    `Number of students in CS: ${csCount}. List: ${csList.join(', ')}`,
+    `Number of students in SWE: ${sweCount}. List: ${sweList.join(', ')}`,
+  ];
+  return reportParts.join('\n');
+}
 // Route for the /students path
 app.get('/students', async (req, res) => {
   try {
-    const response = await fs.readFile(file, 'utf-8');
-    let sweCount = 0;
-    let csCount = 0;
-    const students = [];
-    const args = response.split('\n');
-    const items = args.slice(1, -1);
-    const reportParts = ['This is the list of our students'];
-    reportParts.push(`Number of students: ${items.length}`);
-    for (const item of items) {
-      students.push(item.split(','));
-    }
-    const csList = [];
-    const sweList = [];
-    for (const student of students) {
-      for (const s of student) {
-        // if (fields.includes('CS')) {
-        if (s === 'CS') {
-          csCount += 1;
-          csList.push(student[0]);
-        } else if (s === 'SWE') {
-          sweCount += 1;
-          sweList.push(student[0]);
-        }
-      }
-    }
-    reportParts.push(`Number of students in CS: ${csCount}. List: ${csList.join(', ')}`);
-    reportParts.push(`Number of students in SWE: ${sweCount}. List: ${sweList.join(', ')}`);
+    const report = await countStudents(file);
     res.statusCode = 200;
     res.setHeader('Content-Type', 'text/plain');
-    res.send(reportParts.join('\n'));
+    res.send(report);
   } catch (err) {
     // throw new Error('Cannot load the database');
     res.statusCode = 500;
