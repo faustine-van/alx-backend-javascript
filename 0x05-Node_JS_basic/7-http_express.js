@@ -8,6 +8,7 @@ const file = args[2];
 const app = express();
 
 app.get('/', (req, res) => {
+  res.setHeader('Content-Type', 'text/plain');
   res.send('Hello Holberton School!');
 });
 
