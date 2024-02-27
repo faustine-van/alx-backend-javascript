@@ -1,39 +1,35 @@
 // Reading a file synchronously with Node JS
-const fs = require('fs');
+const fs = require('fs').promises;
 
-function countStudents(file) {
+async function countStudents(file) {
   try {
-    return new Promise((resolve, reject) => {
-      fs.readFile(file, 'utf-8', (err, data) => {
-        if (err) {
-          reject(new Error('Cannot load the database'));
-        } else {
-          const lines = data.split('\n').filter((line) => line.trim() !== '');
-          // Remove header line
-          // lines.shift();
-          const students = lines.slice(1).map((line) => line.split(','));
-
-          const csStudents = students.filter((student) => student.includes('CS'));
-          const sweStudents = students.filter((student) => student.includes('SWE'));
-
-          const sweCount = sweStudents.length;
-          const csCount = csStudents.length;
-
-          const csList = csStudents.map((student) => student[0]);
-          const sweList = sweStudents.map((student) => student[0]);
-
-          const reportParts = [
-            `Number of students: ${students.length}`,
-            `Number of students in CS: ${csCount}. List: ${csList.join(', ')}`,
-            `Number of students in SWE: ${sweCount}. List: ${sweList.join(', ')}`,
-          ];
-          console.log(reportParts.join('\n'));
-          resolve();
+    const res = await fs.readFile(file, 'utf-8');
+    let j = 0;
+    let u = 0;
+    const students = [];
+    const args = res.split('\n');
+    const items = args.slice(1, -1);
+    console.log(`Number of students: ${items.length}`);
+    for (const item of items) {
+      students.push(item.split(','));
+    }
+    const csList = [];
+    const sweList = [];
+    for (const student of students) {
+      for (const s of student) {
+        if (s === 'CS') {
+          u += 1;
+          csList.push(student[0]);
+        } else if (s === 'SWE') {
+          j += 1;
+          sweList.push(student[0]);
         }
-      });
-    });
+      }
+    }
+    console.log(`Number of students in CS: ${u}. List: ${csList.join(', ')}`);
+    console.log(`Number of students in SWE: ${j}. List: ${sweList.join(', ')}`);
   } catch (err) {
-    throw (new Error('Cannot load the database'));
+    throw new Error('Cannot load the database');
   }
 }
 module.exports = countStudents;
