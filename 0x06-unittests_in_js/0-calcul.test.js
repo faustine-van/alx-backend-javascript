@@ -16,7 +16,7 @@ describe('calculateNumber', () => {
   it('should return 6', () => {
     assert.strictEqual(calculateNumber(1.5, 3.7), 6);
   });
-  it('should return the sum of two negative rounded numbers', () => {
-    assert.strictEqual(calculateNumber(-1.4, -4.5), -5);
+  it('should return 5 when floating', () => {
+    assert.strictEqual(calculateNumber(2.99999, 2.09), 5);
   });
 });
