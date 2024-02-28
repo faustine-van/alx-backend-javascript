@@ -1,32 +1,32 @@
 const fs = require('fs');
 
+// eslint-disable-next-line consistent-return
 function readDatabase(filePath) {
-  return new Promise((resolve, reject) => {
-    fs.readFile(filePath, (err, data) => {
-      if (err) {
-        reject(err);
-      } else {
-        const lines = data.split('\n').filter((line) => line.trim() !== '');
-        lines.shift();
+  try {
+    return new Promise((resolve, reject) => {
+      fs.readFile(filePath, 'utf-8', (err, data) => {
+        if (err) {
+          reject(err);
+        } else {
+          const lines = data.split('\n').filter((line) => line.trim() !== '');
+          lines.shift();
 
-        const students = lines.map((line) => line.split(','));
-        const csStudents = [];
-        const sweStudents = [];
-        students.forEach((student) => {
-          const [firstname, field] = student;
-          if (field === 'CS') {
-            csStudents.push(firstname);
-          } else if (field === 'SWE') {
-            sweStudents.push(firstname);
-          }
-        });
+          const students = lines.map((line) => line.split(','));
+          const csStudents = students.filter((student) => student.includes('CS'));
+          const sweStudents = students.filter((student) => student.includes('SWE'));
 
-        resolve({
-          CS: csStudents,
-          SWE: sweStudents,
-        });
-      }
+          const csList = csStudents.map((student) => ` ${student[0]}`);
+          const sweList = sweStudents.map((student) => ` ${student[0]}`);
+          resolve({
+            CS: csList,
+            SWE: sweList,
+          });
+        }
+      });
     });
-  });
+  } catch (err) {
+    console.error('Cannot load the database');
+  }
 }
+
 module.exports = readDatabase;
