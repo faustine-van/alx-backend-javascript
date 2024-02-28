@@ -5,7 +5,7 @@ const { expect } = chai;
 const calculateNumber = require('./2-calcul_chai');
 
 describe('calculateNumber', () => {
-  describe('sUM', () => {
+  describe('sum', () => {
     it('should return 6', () => {
       expect(calculateNumber('SUM', 1.4, 4.5)).to.equal(6);
     });
@@ -31,7 +31,7 @@ describe('calculateNumber', () => {
       expect(calculateNumber('SUM', 5, [1, 2, 3])).to.be.NaN;
     });
   });
-  describe('sUBTRACT', () => {
+  describe('subtract', () => {
     it('should return 4', () => {
       expect(calculateNumber('SUBTRACT', 1.4, 4.5)).to.equal(4);
     });
@@ -60,7 +60,7 @@ describe('calculateNumber', () => {
       expect(calculateNumber('SUBTRACT', 5, [1, 2, 3])).to.be.NaN;
     });
   });
-  describe('dIVIDE', () => {
+  describe('divide', () => {
     it('should return 0.2', () => {
       expect(calculateNumber('DIVIDE', 1.4, 4.5)).to.equal(0.2);
     });
