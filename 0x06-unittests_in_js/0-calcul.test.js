@@ -11,6 +11,9 @@ describe('calculateNumber', () => {
     assert.strictEqual(calculateNumber(1, 3.7), 5);
   });
   it('should return 5', () => {
+    assert.strictEqual(calculateNumber(-1, 3.7), 3);
+  });
+  it('should return 5', () => {
     assert.strictEqual(calculateNumber(1.2, 3.7), 5);
   });
   it('should return 6', () => {
