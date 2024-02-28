@@ -12,7 +12,7 @@ describe('calculateNumber', () => {
     it('should return 4', () => {
       expect(calculateNumber('SUM', 1, 3)).to.equal(4);
     });
-    it('should return 4', () => {
+    it('should return 5 when float', () => {
       expect(calculateNumber('SUM', 2.99999, 2.09)).to.equal(5);
     });
   });
@@ -25,6 +25,9 @@ describe('calculateNumber', () => {
     });
     it('should return -1', () => {
       expect(calculateNumber('SUBTRACT', 1.4, 0)).to.equal(-1);
+    });
+    it('should return -1 when float', () => {
+      expect(calculateNumber('SUBTRACT', 2.99999, 2.09)).to.equal(-1);
     });
   });
   describe('divide', () => {
