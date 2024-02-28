@@ -29,6 +29,9 @@ describe('calculateNumber', () => {
     it('should return NaN when args present but list', () => {
       assert.strictEqual(calculateNumber('SUM', 5, [1, 2, 3]), NaN);
     });
+    it('should return 5 when floating', () => {
+      assert.strictEqual(calculateNumber('SUM', 2.99999, 2.09), 5);
+    });
   });
   describe('sUBTRACT', () => {
     it('should return 4', () => {
