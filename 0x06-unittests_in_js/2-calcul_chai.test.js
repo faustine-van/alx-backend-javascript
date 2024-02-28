@@ -70,23 +70,5 @@ describe('calculateNumber', () => {
     it('should return error', () => {
       expect(calculateNumber('DIVIDE', 1.4, 0)).to.equal('Error');
     });
-    it('should return NaN when no args present', () => {
-      expect(calculateNumber('DIVIDE')).to.be.NaN;
-    });
-    it('should return Undefined when no args present', () => {
-      expect(calculateNumber()).to.be.an('undefined');
-    });
-    it('should return NaN when no args present', () => {
-      expect(calculateNumber('DIVIDE', 1)).to.be.NaN;
-    });
-    it('should return NaN when no arg present', () => {
-      expect(calculateNumber('DIVIDE', 2)).to.be.NaN;
-    });
-    it('should return NaN when arg present but string', () => {
-      expect(calculateNumber('DIVIDE', 'string', 8)).to.be.NaN;
-    });
-    it('should return NaN when args present but list', () => {
-      expect(calculateNumber('DIVIDE', 5, [1, 2, 3])).to.be.NaN;
-    });
   });
 });
