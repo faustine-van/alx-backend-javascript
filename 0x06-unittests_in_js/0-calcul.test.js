@@ -17,6 +17,6 @@ describe('calculateNumber', () => {
     assert.strictEqual(calculateNumber(1.5, 3.7), 6);
   });
   it('should return 5 when floating', () => {
-    assert.strictEqual(calculateNumber(2.9, 7.9), 11);
+    assert.strictEqual(calculateNumber(2.99999, 2.09), 5);
   });
 });
