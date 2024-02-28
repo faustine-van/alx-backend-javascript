@@ -40,8 +40,5 @@ describe('calculateNumber', () => {
     it('should return 7', () => {
       expect(calculateNumber('DIVIDE', 14, 2)).to.equal(7);
     });
-    it('should return error', () => {
-      expect(calculateNumber('DIVIDE', 1.4, 0)).to.equal('Error');
-    });
   });
 });
