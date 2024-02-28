@@ -15,8 +15,7 @@ class StudentsController {
 
         response.send(report.join('\n'));
       }).catch((error) => {
-        console.error('Error:', error); // Log the error
-        response.status(500).send('Cannot load the database');
+        response.status(500).send(`This is the list of our studentse\n${error.message}`);
       });
   }
 
