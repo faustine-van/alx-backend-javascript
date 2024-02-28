@@ -12,6 +12,9 @@ describe('calculateNumber', () => {
     it('should return 4', () => {
       expect(calculateNumber('SUM', 1, 3)).to.equal(4);
     });
+    it('should return 4', () => {
+      expect(calculateNumber('SUM', 2.99999, 2.09)).to.equal(5);
+    });
   });
   describe('subtract', () => {
     it('should return 4', () => {
