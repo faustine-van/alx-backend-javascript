@@ -1,16 +1,20 @@
 // calculateNumber(type, a, b) return sum of two args
 // eslint-disable-next-line consistent-return
 function calculateNumber(type, a, b) {
+  const roundedA = Math.round(a);
+  const roundedB = Math.round(b);
+
   if (type === 'SUM') {
-    return Math.round(a) + Math.round(b);
+    return roundedA + roundedB;
   } if (type === 'SUBTRACT') {
-    return Math.round(b) - Math.round(a);
+    return roundedA - roundedB;
   } if (type === 'DIVIDE') {
-    if (Math.round(b) === 0) {
+    if (roundedB === 0) {
       return 'Error';
     }
-    return Math.round(a) / Math.round(b);
+    return roundedA / roundedB;
   }
+  throw new Error('Invalid type. Must be SUM, SUBTRACT, or DIVIDE.');
 }
 
 module.exports = calculateNumber;
