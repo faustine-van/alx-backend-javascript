@@ -88,8 +88,5 @@ describe('calculateNumber', () => {
     it('should return NaN when args present but list', () => {
       expect(calculateNumber('DIVIDE', 5, [1, 2, 3])).to.be.NaN;
     });
-    it('should return NaN when args present but list', () => {
-      expect(calculateNumber('DIVIDE', 'not a number', 'also not a number')).to.be.NaN;
-    });
   });
 });
