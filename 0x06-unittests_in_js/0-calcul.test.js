@@ -19,4 +19,7 @@ describe('calculateNumber', () => {
   it('should return 6', () => {
     assert.strictEqual(calculateNumber(1.5, 3.7), 6);
   });
+  it('should return NaN when no args present', () => {
+    assert.strictEqual(calculateNumber(), NaN);
+  });
 });
