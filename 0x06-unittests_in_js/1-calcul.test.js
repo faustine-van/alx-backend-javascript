@@ -30,7 +30,7 @@ describe('calculateNumber', () => {
       assert.strictEqual(calculateNumber('SUM', 5, [1, 2, 3]), NaN);
     });
     it('should return 5 when floating', () => {
-      assert.strictEqual(calculateNumber('SUM', 2.99999, 2.09), 5);
+      assert.strictEqual(calculateNumber('SUM', 1.5, 3.7), 6);
     });
   });
   describe('sUBTRACT', () => {
