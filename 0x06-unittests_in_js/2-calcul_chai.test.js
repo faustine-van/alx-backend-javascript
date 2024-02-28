@@ -29,6 +29,9 @@ describe('calculateNumber', () => {
     it('should return -1 when float', () => {
       expect(calculateNumber('SUBTRACT', 2.99999, 2.09)).to.equal(-1);
     });
+    it('should return -1 when float', () => {
+      expect(calculateNumber('SUBTRACT', 5.12, 2.09)).to.equal(-3);
+    });
   });
   describe('divide', () => {
     it('should return 0.2', () => {
