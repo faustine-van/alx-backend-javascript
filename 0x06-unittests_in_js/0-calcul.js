@@ -1,0 +1,5 @@
+// calculateNumber(a, b) return sum of two args
+function calculateNumber(a, b) {
+  return Math.round(a) + Math.round(b);
+}
+module.exports = calculateNumber;
