@@ -72,6 +72,9 @@ describe('calculateNumber', () => {
     it('should return error', () => {
       assert.strictEqual(calculateNumber('DIVIDE', 1.4, 0), 'Error');
     });
+    it('should return error', () => {
+      assert.strictEqual(calculateNumber('DIVIDE', 1.99999, 0), 'Error');
+    });
     it('should return NaN when no args present', () => {
       assert.strictEqual(calculateNumber('DIVIDE'), NaN);
     });
