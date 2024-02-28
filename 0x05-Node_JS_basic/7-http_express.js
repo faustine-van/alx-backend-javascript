@@ -50,7 +50,7 @@ app.get('/students', async (_, res) => {
     const report = await countStudents(file);
     res.send(report);
   } catch (error) {
-    res.status(500).send('Internal server Error');
+    res.status(500).send(`This is the list of our students\n${error.message}`);
   }
 });
 
