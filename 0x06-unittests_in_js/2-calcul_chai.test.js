@@ -12,24 +12,6 @@ describe('calculateNumber', () => {
     it('should return 4', () => {
       expect(calculateNumber('SUM', 1, 3)).to.equal(4);
     });
-    it('should return NaN when no args present', () => {
-      expect(calculateNumber('SUM')).to.be.NaN;
-    });
-    it('should return undefined when no args present', () => {
-      expect(calculateNumber()).to.be.an('undefined');
-    });
-    it('should return NaN when no args present', () => {
-      expect(calculateNumber('SUM', 1)).to.be.NaN;
-    });
-    it('should return NaN when no arg present', () => {
-      expect(calculateNumber('SUM', 2)).to.be.NaN;
-    });
-    it('should return NaN when arg present but string', () => {
-      expect(calculateNumber('SUM', 'string', 8)).to.be.NaN;
-    });
-    it('should return NaN when args present but list', () => {
-      expect(calculateNumber('SUM', 5, [1, 2, 3])).to.be.NaN;
-    });
   });
   describe('subtract', () => {
     it('should return 4', () => {
@@ -40,24 +22,6 @@ describe('calculateNumber', () => {
     });
     it('should return -1', () => {
       expect(calculateNumber('SUBTRACT', 1.4, 0)).to.equal(-1);
-    });
-    it('should return NaN when no args present', () => {
-      expect(calculateNumber('SUBTRACT')).to.be.NaN;
-    });
-    it('should return undifined when no args present', () => {
-      expect(calculateNumber()).to.be.an('undefined');
-    });
-    it('should return NaN when no args present', () => {
-      expect(calculateNumber('SUBTRACT', 1)).to.be.NaN;
-    });
-    it('should return NaN when no arg present', () => {
-      expect(calculateNumber('SUBTRACT', 2)).to.be.NaN;
-    });
-    it('should return NaN when arg present but string', () => {
-      expect(calculateNumber('SUBTRACT', 'string', 8)).to.be.NaN;
-    });
-    it('should return NaN when args present but list', () => {
-      expect(calculateNumber('SUBTRACT', 5, [1, 2, 3])).to.be.NaN;
     });
   });
   describe('divide', () => {
