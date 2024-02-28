@@ -52,12 +52,10 @@ const app = http.createServer(async (req, res) => {
       res.setHeader('Content-Type', 'text/plain');
       res.end(report);
     } catch (error) {
-      res.end('Internal server Error');
+      res.end(`This is the list of our students\n${error.message}`);
     }
   }
-}).listen(1245, () => {
-  console.log('Server is running on port 1245');
-});
+}).listen(1245, () => {});
 
 // Export the app for external use
 module.exports = app;
