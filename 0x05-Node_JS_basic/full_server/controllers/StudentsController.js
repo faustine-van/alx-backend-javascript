@@ -14,9 +14,8 @@ class StudentsController {
         report.push(`Number of students in SWE: ${data.SWE.length}. List:${data.SWE}`);
 
         response.send(report.join('\n'));
-      })
-      // eslint-disable-next-line no-unused-vars
-      .catch((error) => {
+      }).catch((error) => {
+        console.error('Error:', error); // Log the error
         response.status(500).send('Cannot load the database');
       });
   }
@@ -26,15 +25,15 @@ class StudentsController {
     readDatabase(file)
       .then((data) => {
         if (field === 'CS') {
-          response.status(200).send(`List:${data.CS}`);
+          response.status(200).send(`List: ${data.CS}`);
         } else if (field === 'SWE') {
           response.status(200).send(`List:${data.SWE}`);
         } else {
           response.status(500).send('Major parameter must be CS or SWE');
         }
       })
-      // eslint-disable-next-line no-unused-vars
       .catch((error) => {
+        console.error('Error:', error); // Log the error
         response.status(500).send('Cannot load the database');
       });
   }
