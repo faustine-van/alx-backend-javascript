@@ -12,5 +12,7 @@ function calculateNumber(type, a, b) {
     }
     return Math.round(a) / Math.round(b);
   }
+  return 0;
 }
+// console.log(calculateNumber('SUM', -1.0, 1.0));
 module.exports = calculateNumber;
