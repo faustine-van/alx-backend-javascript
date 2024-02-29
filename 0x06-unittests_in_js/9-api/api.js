@@ -10,7 +10,8 @@ app.get('/cart/:id', (req, res) => {
   if (!isNaN(ids)) {
     res.send(`Payment methods for cart ${ids}`);
   } else {
-    res.status(400).send('Invalid cart ID');
+    res.status(404);
+    res.status(404).send(`<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><title>Error</title></head><body><pre>Cannot GET ${req.url}</pre></body></html>`);
   }
 });
 
