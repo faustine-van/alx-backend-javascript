@@ -2,7 +2,7 @@ const assert = require('assert');
 const getPaymentTokenFromAPI = require('./6-payment_token');
 
 describe('getPaymentTokenFromAPI', () => {
-  it('should return a resolved promise with the expected object', () => new Promise((done) => {
+  it('should return a resolved promise with the expected object', () => {
     // Call the function and wait for the promise to resolve
     getPaymentTokenFromAPI(true).then((result) => {
       // Define the expected object
@@ -17,5 +17,5 @@ describe('getPaymentTokenFromAPI', () => {
       // If there is an error, fail the test
       done(error);
     });
-  }));
+  });
 });
