@@ -41,7 +41,7 @@ describe('index page', () => {
     });
     done();
   }));
-  it('responds with body', () => new Promise((done) => {
+  it('responds with body when :id is number', () => new Promise((done) => {
     request('http://localhost:7865/cart/12', (err, res) => {
       assert.strictEqual(res.body, 'Payment methods for cart 12');
     });
