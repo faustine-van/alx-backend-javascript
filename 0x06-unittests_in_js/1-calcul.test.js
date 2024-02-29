@@ -76,6 +76,9 @@ describe('calculateNumber', () => {
     it('negative number and positive 0 rounded number', () => {
       assert.strictEqual(calculateNumber('DIVIDE', -3.0, 0.3), 'Error');
     });
+    it('negative numbers', () => {
+      assert.strictEqual(calculateNumber('DIVIDE', -3.0, -0.3), 'Error');
+    });
     it('positive number and negative rounded number', () => {
       assert.strictEqual(calculateNumber('DIVIDE', 0.0, 0.0), 'Error');
     });
