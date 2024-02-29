@@ -20,6 +20,9 @@ describe('calculateNumber', () => {
     it('should return 2.0 when equals negative numbers', () => {
       assert.strictEqual(calculateNumber('SUM', -1.0, -1.0), -2.0);
     });
+    it('should return 0.0 when equals negative numbers', () => {
+      assert.strictEqual(calculateNumber('SUM', -1.0, 1.0), 0.0);
+    });
   });
   describe('sUBTRACT', () => {
     it('should return 4', () => {
@@ -37,6 +40,9 @@ describe('calculateNumber', () => {
     it('should return 0.0 when equals negative number', () => {
       assert.strictEqual(calculateNumber('SUBTRACT', -1.0, -1.0), 0.0);
     });
+    it('should return 0.0 when equals number', () => {
+      assert.strictEqual(calculateNumber('SUBTRACT', -1.0, 1.0), 2.0);
+    });
   });
   describe('dIVIDE', () => {
     it('should return 0.2', () => {
@@ -53,6 +59,9 @@ describe('calculateNumber', () => {
     });
     it('should return 1 when equals number', () => {
       assert.strictEqual(calculateNumber('DIVIDE', -1.0, -1.0), 1);
+    });
+    it('should return 1 when equals number', () => {
+      assert.strictEqual(calculateNumber('DIVIDE', -1.0, 1.0), -1);
     });
   });
 });
