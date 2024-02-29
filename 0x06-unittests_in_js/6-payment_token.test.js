@@ -1,18 +1,16 @@
 const assert = require('assert');
 const getPaymentTokenFromAPI = require('./6-payment_token');
 
-// const expect = chai.expect;
-
 describe('getPaymentTokenFromAPI', () => {
-  it('return a resolved promise with the object', () => new Promise((done) => {
+  it('should return a resolved promise with the object', () => new Promise((done) => {
     getPaymentTokenFromAPI(true)
-      .then((res) => {
-        expected = { data: 'Successful response from the API' };
-        assert.deepStrictEqual(res, expected);
-        done();
+      .then((data) => {
+        const expected = { data: 'Successful response from the API' };
+        assert.deepStrictEqual(data, expected);
+        done(); // Indicate test completion to Mocha
       })
       .catch((error) => {
-        done(error);
+        done(error); // Pass error to Mocha
       });
   }));
 });
