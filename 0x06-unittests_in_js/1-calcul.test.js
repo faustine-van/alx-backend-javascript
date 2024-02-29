@@ -70,5 +70,8 @@ describe('calculateNumber', () => {
     it('positive number and 0.3', () => {
       assert.strictEqual(calculateNumber('DIVIDE', 3.0, 0.3), 'Error');
     });
+    it('positive number and 0.3', () => {
+      assert.strictEqual(calculateNumber('DIVIDE', 3.0, -0.3), 'Error');
+    });
   });
 });
