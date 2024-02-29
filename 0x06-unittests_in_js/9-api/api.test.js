@@ -47,4 +47,16 @@ describe('index page', () => {
     });
     done();
   }));
+  it('test content length when :id is number', () => new Promise((done) => {
+    request('http://localhost:7865/cart/12', (err, res) => {
+      assert.strictEqual(res.headers['content-length'], '27');
+    });
+    done();
+  }));
+  it('test url when :id is number', () => new Promise((done) => {
+    request('http://localhost:7865/cart/12', (err, res) => {
+      assert.strictEqual(res.headers['content-type'], 'text/html; charset=utf-8');
+    });
+    done();
+  }));
 });
