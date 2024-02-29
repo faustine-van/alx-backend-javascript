@@ -14,10 +14,10 @@ describe('calculateNumber', () => {
     it('should return 5 when floating', () => {
       assert.strictEqual(calculateNumber('SUM', 1.5, 3.7), 6);
     });
-    it('should return 2.0 when equals number', () => {
+    it('should return 2.0 when equals positive number', () => {
       assert.strictEqual(calculateNumber('SUM', 1.0, 1.0), 2.0);
     });
-    it('should return 2.0 when equals number', () => {
+    it('should return 2.0 when equals negative numbers', () => {
       assert.strictEqual(calculateNumber('SUM', -1.0, -1.0), -2.0);
     });
   });
@@ -34,7 +34,7 @@ describe('calculateNumber', () => {
     it('should return 2.0 when equals number', () => {
       assert.strictEqual(calculateNumber('SUBTRACT', 1.0, 1.0), 0.0);
     });
-    it('should return 0.0 when equals number', () => {
+    it('should return 0.0 when equals negative number', () => {
       assert.strictEqual(calculateNumber('SUBTRACT', -1.0, -1.0), 0.0);
     });
   });
