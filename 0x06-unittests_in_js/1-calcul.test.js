@@ -51,7 +51,7 @@ describe('calculateNumber', () => {
     it('should return 7', () => {
       assert.strictEqual(calculateNumber('DIVIDE', 14, 2), 7);
     });
-    it('should return error', () => {
+    it('positive number and 0', () => {
       assert.strictEqual(calculateNumber('DIVIDE', 1.4, 0), 'Error');
     });
     it('should return 2.0 when equals number', () => {
@@ -62,6 +62,13 @@ describe('calculateNumber', () => {
     });
     it('should return 1 when equals number', () => {
       assert.strictEqual(calculateNumber('DIVIDE', -1.0, 1.0), -1);
+    });
+    // add
+    it('positive number and 0', () => {
+      assert.strictEqual(calculateNumber('DIVIDE', 1.0, 0), 'Error');
+    });
+    it('positive number and 0.3', () => {
+      assert.strictEqual(calculateNumber('DIVIDE', 3.0, 0.3), 'Error');
     });
   });
 });
