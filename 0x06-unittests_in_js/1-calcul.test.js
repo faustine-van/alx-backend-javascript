@@ -34,14 +34,14 @@ describe('calculateNumber', () => {
     });
   });
   describe('sUBTRACT', () => {
-    it('should return 4', () => {
-      assert.strictEqual(calculateNumber('SUBTRACT', 1.4, 4.5), 4);
+    it('should return -4', () => {
+      assert.strictEqual(calculateNumber('SUBTRACT', 1.4, 4.5), -4);
     });
-    it('should return 10', () => {
-      assert.strictEqual(calculateNumber('SUBTRACT', 4, 14), 10);
+    it('should return -10', () => {
+      assert.strictEqual(calculateNumber('SUBTRACT', 4, 14), -10);
     });
-    it('should return -1', () => {
-      assert.strictEqual(calculateNumber('SUBTRACT', 1.4, 0), -1);
+    it('should return 1', () => {
+      assert.strictEqual(calculateNumber('SUBTRACT', 1.4, 0), 1);
     });
     it('should return 2.0 when equals number', () => {
       assert.strictEqual(calculateNumber('SUBTRACT', 1.0, 1.0), 0.0);
@@ -50,7 +50,7 @@ describe('calculateNumber', () => {
       assert.strictEqual(calculateNumber('SUBTRACT', -1.0, -1.0), 0.0);
     });
     it('should return 0.0 when equals number', () => {
-      assert.strictEqual(calculateNumber('SUBTRACT', -1.0, 1.0), 2.0);
+      assert.strictEqual(calculateNumber('SUBTRACT', -1.0, 1.0), -2, 0);
     });
   });
   describe('dIVIDE', () => {
