@@ -1,8 +1,7 @@
-// test using mocha
-// calculateNumber(type, a, b) return sum of two args
 const assert = require('assert');
 const calculateNumber = require('./1-calcul');
-
+// test using mocha
+// calculateNumber(type, a, b) return sum of two args
 describe('calculateNumber', () => {
   describe('sUM', () => {
     it('should return 6', () => {
