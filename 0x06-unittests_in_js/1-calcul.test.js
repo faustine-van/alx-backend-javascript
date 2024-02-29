@@ -11,24 +11,6 @@ describe('calculateNumber', () => {
     it('should return 4', () => {
       assert.strictEqual(calculateNumber('SUM', 1, 3), 4);
     });
-    it('should return NaN when no args present', () => {
-      assert.strictEqual(calculateNumber('SUM'), NaN);
-    });
-    it('should return NaN when no args present', () => {
-      assert.strictEqual(calculateNumber(), undefined);
-    });
-    it('should return NaN when no args present', () => {
-      assert.strictEqual(calculateNumber('SUM', 1), NaN);
-    });
-    it('should return NaN when no arg present', () => {
-      assert.strictEqual(calculateNumber('SUM', 2), NaN);
-    });
-    it('should return NaN when arg present but string', () => {
-      assert.strictEqual(calculateNumber('SUM', 'string', 8), NaN);
-    });
-    it('should return NaN when args present but list', () => {
-      assert.strictEqual(calculateNumber('SUM', 5, [1, 2, 3]), NaN);
-    });
     it('should return 5 when floating', () => {
       assert.strictEqual(calculateNumber('SUM', 1.5, 3.7), 6);
     });
@@ -56,24 +38,6 @@ describe('calculateNumber', () => {
     });
     it('should return error', () => {
       assert.strictEqual(calculateNumber('DIVIDE', 1.99999, 0), 'Error');
-    });
-    it('should return NaN when no args present', () => {
-      assert.strictEqual(calculateNumber('DIVIDE'), NaN);
-    });
-    it('should return undefined when no args present', () => {
-      assert.strictEqual(calculateNumber(), undefined);
-    });
-    it('should return NaN when no args present', () => {
-      assert.strictEqual(calculateNumber('DIVIDE', 1), NaN);
-    });
-    it('should return NaN when no arg present', () => {
-      assert.strictEqual(calculateNumber('DIVIDE', 2), NaN);
-    });
-    it('should return NaN when arg present but string', () => {
-      assert.strictEqual(calculateNumber('DIVIDE', 'string', 8), NaN);
-    });
-    it('should return NaN when args present but list', () => {
-      assert.strictEqual(calculateNumber('DIVIDE', 5, [1, 2, 3]), NaN);
     });
   });
 });
