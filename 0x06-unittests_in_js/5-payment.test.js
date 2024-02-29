@@ -17,7 +17,6 @@ describe('sendPaymentRequestToAPI', () => {
   it('test will call sendPaymentRequestToAPI with 100, and 20', () => {
     sendPaymentRequestToAPI(100, 20);
     sinon.assert.calledOnceWithExactly(spyConsole, 'The total is: 120');
-    // sinon.assert.spyConsole.calledOnce();
   });
   it('test will call sendPaymentRequestToAPI with 10, and 10', () => {
     sendPaymentRequestToAPI(10, 10);
