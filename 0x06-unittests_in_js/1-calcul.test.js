@@ -1,7 +1,8 @@
-const assert = require('assert');
-const calculateNumber = require('./1-calcul');
 // test using mocha
 // calculateNumber(type, a, b) return sum of two args
+const assert = require('assert');
+const calculateNumber = require('./1-calcul');
+
 describe('calculateNumber', () => {
   describe('sUM', () => {
     it('should return 6', () => {
@@ -19,8 +20,17 @@ describe('calculateNumber', () => {
     it('should return 2.0 when equals negative numbers', () => {
       assert.strictEqual(calculateNumber('SUM', -1.0, -1.0), -2.0);
     });
+    it('should return 2.0 when different negative numbers', () => {
+      assert.strictEqual(calculateNumber('SUM', -2.0, -1.0), -3.0);
+    });
     it('should return 0.0 when equals negative numbers', () => {
       assert.strictEqual(calculateNumber('SUM', -1.0, 1.0), 0.0);
+    });
+    it('should return 0.0 when equals negative numbers', () => {
+      assert.strictEqual(calculateNumber('SUM', 1.0, -1.0), 0.0);
+    });
+    it('should return 0.0 when equals negative numbers', () => {
+      assert.strictEqual(calculateNumber('SUM', 0, -1.0), -1.0);
     });
   });
   describe('sUBTRACT', () => {
