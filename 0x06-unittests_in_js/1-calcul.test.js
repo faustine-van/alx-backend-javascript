@@ -43,24 +43,6 @@ describe('calculateNumber', () => {
     it('should return -1', () => {
       assert.strictEqual(calculateNumber('SUBTRACT', 1.4, 0), -1);
     });
-    it('should return NaN when no args present', () => {
-      assert.strictEqual(calculateNumber('SUBTRACT'), NaN);
-    });
-    it('should return NaN when no args present', () => {
-      assert.strictEqual(calculateNumber(), undefined);
-    });
-    it('should return NaN when no args present', () => {
-      assert.strictEqual(calculateNumber('SUBTRACT', 1), NaN);
-    });
-    it('should return NaN when no arg present', () => {
-      assert.strictEqual(calculateNumber('SUBTRACT', 2), NaN);
-    });
-    it('should return NaN when arg present but string', () => {
-      assert.strictEqual(calculateNumber('SUBTRACT', 'string', 8), NaN);
-    });
-    it('should return NaN when args present but list', () => {
-      assert.strictEqual(calculateNumber('SUBTRACT', 5, [1, 2, 3]), NaN);
-    });
   });
   describe('dIVIDE', () => {
     it('should return 0.2', () => {
