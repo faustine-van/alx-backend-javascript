@@ -15,6 +15,7 @@ npm run test *.test.js
 
 
 ### Reference
+[The Object Literal Pattern](https://www.javascripttutorial.net/es6/object-literal-extensions/)
 [Mocha documentation(https://mochajs.org/#installation)
 [Chai](https://www.chaijs.com/api/bdd/)
 [Sinon](https://sinonjs.org/releases/v7/)
