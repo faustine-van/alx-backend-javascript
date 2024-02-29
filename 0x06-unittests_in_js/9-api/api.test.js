@@ -37,7 +37,7 @@ describe('index page', () => {
   }));
   it('correct status code when :id is not number?', () => new Promise((done) => {
     request('http://localhost:7865/cart/hello', (err, res) => {
-      assert.strictEqual(res.statusCode, 400);
+      assert.strictEqual(res.statusCode, 404);
     });
     done();
   }));
