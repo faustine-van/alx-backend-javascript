@@ -91,7 +91,7 @@ describe('index page', () => {
     });
     done();
   }));
-  // tests post / login
+  // tests post / login g
   it('respond with / login', () => new Promise((done) => {
     const options = {
       url: 'http://localhost:7865/login',
