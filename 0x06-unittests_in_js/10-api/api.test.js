@@ -1,5 +1,6 @@
 const request = require('request');
 const assert = require('assert');
+const { options } = require('./api');
 
 describe('index page', () => {
   // Basic Integration testing
@@ -123,6 +124,40 @@ describe('index page', () => {
     };
     request(options, (err, res) => {
       assert.strictEqual(res.body, 'Welcome Betty');
+    });
+    done();
+  }));
+  it('respond with content type', () => new Promise((done) => {
+    const options = {
+      url: 'http://localhost:7865/login',
+      method: 'POST',
+      json: true,
+      body: {
+        userName: 'Betty',
+      },
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    };
+    request(options, (err, res) => {
+      assert.strictEqual(res.headers['content-type'], 'text/html; charset=utf-8');
+    });
+    done();
+  }));
+  it('respond with content length', () => new Promise((done) => {
+    const options = {
+      url: 'http://localhost:7865/login',
+      method: 'POST',
+      json: true,
+      body: {
+        userName: 'Betty',
+      },
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    };
+    request(options, (err, res) => {
+      assert.strictEqual(res.headers['content-length'], '13');
     });
     done();
   }));
