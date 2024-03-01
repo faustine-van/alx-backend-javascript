@@ -7,7 +7,7 @@ app.get('/', (req, res) => {
 });
 app.get('/cart/:id(\\d+)', (req, res) => {
   const ids = parseInt(req.params.id, 10);
-  if (!ids.isNaN) {
+  if (!isNaN(ids)) {
     res.send(`Payment methods for cart ${ids}`);
   }
 });
