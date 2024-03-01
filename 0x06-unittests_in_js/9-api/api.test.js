@@ -59,4 +59,10 @@ describe('index page', () => {
     });
     done();
   }));
+  it('test url when :id is number', () => new Promise((done) => {
+    request('http://localhost:7865/cart/hello', (err, res) => {
+      assert.strictEqual(res.headers['content-length'], '149');
+    });
+    done();
+  }));
 });
