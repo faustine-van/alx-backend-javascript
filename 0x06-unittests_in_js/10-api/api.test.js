@@ -100,8 +100,8 @@ describe('index page', () => {
     done();
   }));
   it('respond with / login', () => new Promise((done) => {
-    request.post('http://localhost:7865/login', { json: { userName: 'Betty' } }, (err, res, body) => {
-      assert.strictEqual(body, 'Welcome Betty');
+    request.post('http://localhost:7865/login', { json: { userName: 'Faustine' } }, (err, res, body) => {
+      assert.strictEqual(body, 'Welcome Faustine');
     });
     done();
   }));
