@@ -25,9 +25,6 @@ class StudentsController {
     const field = request.params.major;
     readDatabase(file)
       .then((data) => {
-        if (!field) {
-          return res.status(400).send('Major parameter is missing');
-        }
         if (field === 'CS') {
           response.status(200).send(`List:${data.CS}`);
         } else if (field === 'SWE') {
