@@ -92,7 +92,7 @@ describe('index page', () => {
     done();
   }));
 
-  // tests post / login g
+  // tests post / login faustine
   it('respond with / login', () => new Promise((done) => {
     request.post('http://localhost:7865/login', { json: { userName: 'Faustine' } }, (err, res, body) => {
       assert.strictEqual(res.statusCode, 200);
