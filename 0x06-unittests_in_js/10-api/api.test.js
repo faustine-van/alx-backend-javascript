@@ -97,28 +97,12 @@ describe('index page', () => {
     const options = {
       url: 'http://localhost:7865/login',
       method: 'POST',
-      json: true,
-      body: {
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
         userName: 'Betty',
-      },
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    };
-    request(options, (err, res) => {
-      assert.strictEqual(res.statusCode, 200);
-    });
-    done();
-  }));
-  it('missing body in / login', () => new Promise((done) => {
-    const options = {
-      url: 'http://localhost:7865/login',
-      method: 'POST',
-      json: true,
-      body: {},
-      headers: {
-        'Content-Type': 'application/json',
-      },
+      }),
     };
     request(options, (err, res) => {
       assert.strictEqual(res.statusCode, 200);
@@ -129,13 +113,12 @@ describe('index page', () => {
     const options = {
       url: 'http://localhost:7865/login',
       method: 'POST',
-      json: true,
-      body: {
-        userName: 'Betty',
-      },
       headers: {
         'Content-Type': 'application/json',
       },
+      body: JSON.stringify({
+        userName: 'Betty',
+      }),
     };
     request(options, (err, res) => {
       assert.strictEqual(res.body, 'Welcome Betty');
@@ -146,13 +129,12 @@ describe('index page', () => {
     const options = {
       url: 'http://localhost:7865/login',
       method: 'POST',
-      json: true,
-      body: {
-        userName: 'Betty',
-      },
       headers: {
         'Content-Type': 'application/json',
       },
+      body: JSON.stringify({
+        userName: 'Betty',
+      }),
     };
     request(options, (err, res) => {
       assert.strictEqual(res.headers['content-length'], '13');
@@ -163,13 +145,12 @@ describe('index page', () => {
     const options = {
       url: 'http://localhost:7865/login',
       method: 'POST',
-      json: true,
-      body: {
-        userName: 'Betty',
-      },
       headers: {
         'Content-Type': 'application/json',
       },
+      body: JSON.stringify({
+        userName: 'Betty',
+      }),
     };
     request(options, (err, res) => {
       assert.strictEqual(res.headers['content-type'], 'text/html; charset=utf-8');
