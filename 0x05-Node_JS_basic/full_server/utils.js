@@ -1,4 +1,4 @@
-import fs from 'fs';
+const fs = require('fs');
 
 // eslint-disable-next-line consistent-return
 function readDatabase(filePath) {
