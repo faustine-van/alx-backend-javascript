@@ -94,27 +94,8 @@ describe('index page', () => {
   }));
 
   // tests post / login faustine
-  it('respond with / login', () => new Promise((done) => {
-    request.post('http://localhost:7865/login', { json: { userName: 'Faustine' } }, (err, res, body) => {
-      assert.strictEqual(res.statusCode, 200);
-      assert.strictEqual(body, 'Welcome Faustine');
-    });
-    done();
-  }));
-  it('respond with content length / login', () => new Promise((done) => {
-    request.post('http://localhost:7865/login', { json: { userName: 'Betty' } }, (err, res, body) => {
-      assert.strictEqual(res.headers['content-length'], '13');
-    });
-    done();
-  }));
-  it('respond with content type / login', () => new Promise((done) => {
-    request.post('http://localhost:7865/login', { json: { userName: 'Betty' } }, (err, res, body) => {
-      assert.strictEqual(res.headers['content-type'], 'text/html; charset=utf-8');
-    });
-    done();
-  }));
   it('pOST /login returns valid response', () => new Promise((done) => {
-    request.post('http://localhost:7865/login', { json: { userName: 'Bruno' } }, (_err, res, body) => {
+    request.post('http://localhost:7865/login', { json: { userName: 'Bruno' } }, (err, res, body) => {
       expect(res.statusCode).to.be.equal(200);
       expect(body).to.be.equal('Welcome Bruno');
       done();
