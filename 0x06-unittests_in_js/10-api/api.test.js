@@ -1,5 +1,6 @@
 const request = require('request');
 const assert = require('assert');
+const { expect } = require('chai');
 
 describe('index page', () => {
   // Basic Integration testing
@@ -111,5 +112,12 @@ describe('index page', () => {
       assert.strictEqual(res.headers['content-type'], 'text/html; charset=utf-8');
     });
     done();
+  }));
+  it('pOST /login returns valid response', () => new Promise((done) => {
+    request.post('http://localhost:7865/login', { json: { userName: 'Bruno' } }, (_err, res, body) => {
+      expect(res.statusCode).to.be.equal(200);
+      expect(body).to.be.equal('Welcome Bruno');
+      done();
+    });
   }));
 });
