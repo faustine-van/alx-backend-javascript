@@ -91,4 +91,30 @@ describe('index page', () => {
     });
     done();
   }));
+
+  // tests post / login g
+  it('respond with / login', () => new Promise((done) => {
+    request.post('http://localhost:7865/login', { userName: 'Betty' }, (err, res, body) => {
+      assert.strictEqual(res.statusCode, 200);
+    });
+    done();
+  }));
+  it('respond with / login', () => new Promise((done) => {
+    request.post('http://localhost:7865/login', { userName: 'Betty' }, (err, res, body) => {
+      assert.strictEqual(body, 'Welcome Betty');
+    });
+    done();
+  }));
+  it('respond with content length / login', () => new Promise((done) => {
+    request.post('http://localhost:7865/login', { userName: 'Betty' }, (err, res, body) => {
+      assert.strictEqual(res.headers['content-length'], '13');
+    });
+    done();
+  }));
+  it('respond with content type / login', () => new Promise((done) => {
+    request.post('http://localhost:7865/login', { userName: 'Betty' }, (err, res, body) => {
+      assert.strictEqual(res.headers['content-type'], 'text/html; charset=utf-8');
+    });
+    done();
+  }));
 });
