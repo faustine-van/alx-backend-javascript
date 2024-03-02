@@ -28,7 +28,7 @@ describe('index page', () => {
     done();
   }));
 
-  // Regex integration testing
+  // Regex integration testing er
   it('correct status code when :id is 12?', () => new Promise((done) => {
     request('http://localhost:7865/cart/12', (err, res) => {
       assert.strictEqual(res.statusCode, 200);
