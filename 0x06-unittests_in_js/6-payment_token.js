@@ -4,7 +4,7 @@ function getPaymentTokenFromAPI(success) {
     if (success) {
       resolve({ data: 'Successful response from the API' });
     }
-    // Simulate failure or no response
+    resolve();
   });
 }
 
