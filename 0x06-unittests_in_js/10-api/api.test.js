@@ -94,13 +94,8 @@ describe('index page', () => {
 
   // tests post / login g
   it('respond with / login', () => new Promise((done) => {
-    request.post('http://localhost:7865/login', { json: { userName: 'Betty' } }, (err, res, body) => {
-      assert.strictEqual(res.statusCode, 200);
-    });
-    done();
-  }));
-  it('respond with / login', () => new Promise((done) => {
     request.post('http://localhost:7865/login', { json: { userName: 'Faustine' } }, (err, res, body) => {
+      assert.strictEqual(res.statusCode, 200);
       assert.strictEqual(body, 'Welcome Faustine');
     });
     done();
