@@ -2,7 +2,7 @@ const express = require('express');
 // const bodyParser = require('body-parser');
 
 const app = express();
-app.use(express.json());
+// app.use(express.json());
 app.get('/', (req, res) => {
   res.send('Welcome to the payment system');
 });
@@ -24,7 +24,7 @@ app.get('/available_payments', (req, res) => {
   });
 });
 
-app.post('/login', (req, res) => {
+app.post('/login', express.json({ type: '*/*' }), (req, res) => {
   const username = req.body.userName;
   res.send(`Welcome ${username}`);
 });

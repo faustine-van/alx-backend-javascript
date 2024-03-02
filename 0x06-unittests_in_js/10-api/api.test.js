@@ -91,6 +91,7 @@ describe('index page', () => {
     });
     done();
   }));
+
   // tests post / login g
   it('respond with / login', () => new Promise((done) => {
     const options = {
@@ -100,6 +101,21 @@ describe('index page', () => {
       body: {
         userName: 'Betty',
       },
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    };
+    request(options, (err, res) => {
+      assert.strictEqual(res.statusCode, 200);
+    });
+    done();
+  }));
+  it('missing body in / login', () => new Promise((done) => {
+    const options = {
+      url: 'http://localhost:7865/login',
+      method: 'POST',
+      json: true,
+      body: {},
       headers: {
         'Content-Type': 'application/json',
       },
