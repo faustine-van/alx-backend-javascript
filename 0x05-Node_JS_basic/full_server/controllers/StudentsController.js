@@ -2,7 +2,7 @@ const process = require('process');
 
 const file = process.argv[2];
 
-const readDatabase = require('../utils');
+import readDatabase from '../utils';
 
 class StudentsController {
   static getAllStudents(request, response) {
@@ -39,4 +39,4 @@ class StudentsController {
       });
   }
 }
-module.exports = StudentsController;
+export default StudentsController;
