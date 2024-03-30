@@ -1,3 +1,4 @@
+// eslint-disable-next-line import/prefer-default-export
 export class HolbertonClass {
   constructor(year, location) {
     this._year = year;
@@ -13,11 +14,12 @@ export class HolbertonClass {
   }
 }
 
+// eslint-disable-next-line import/prefer-default-export
 export class StudentHolberton {
-  constructor(firstName, lastName, holbertonClass) { // Corrected parameter
+  constructor(firstName, lastName, holbertonClass) {
     this._firstName = firstName;
     this._lastName = lastName;
-    this._holbertonClass = holbertonClass; // Use the parameter
+    this._holbertonClass = holbertonClass;
   }
 
   get fullName() {
@@ -25,11 +27,11 @@ export class StudentHolberton {
   }
 
   get holbertonClass() {
-    return this._holbertonClass; // Corrected getter
+    return this._holbertonClass;
   }
 
   get fullStudentDescription() {
-    return `${this._firstName} ${this._lastName} - ${this._holbertonClass.year} - ${this._holbertonClass.location}`; // Use 'this'
+    return `${this._firstName} ${this._lastName} - ${this._holbertonClass.year} - ${this._holbertonClass.location}`;
   }
 }
 
